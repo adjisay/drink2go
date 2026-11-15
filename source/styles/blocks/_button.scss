@@ -2,10 +2,23 @@
 
 .button {
   padding: 8px 20px;
+  font-family: $main-font;
+  font-weight: 400;
   text-decoration: none;
   color: $base-white;
   background-color: $base-primary;
+  border: none;
   border-radius: 4px;
+  cursor: pointer;
 
   @include font-resize(16px, 24px);
+
+  &--invert {
+    color: $base-primary;
+    background-color: $base-white;
+  }
+
+  &--small-font {
+    font-size: 14px;
+  }
 }
