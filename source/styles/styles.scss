@@ -2,4 +2,6 @@
 @use "common/index";
 
 /* BLOCKS */
-@use "blocks/header";
+@use "blocks/page-header";
+@use "blocks/navigation";
+@use "blocks/logo";
