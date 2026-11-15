@@ -1,0 +1,7 @@
+@use "../common/" as *;
+
+.title {
+  font-weight: 700;
+
+  @include font-resize(24px, 36px);
+}
