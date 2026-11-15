@@ -1,0 +1,11 @@
+@use "../common/" as *;
+
+.button {
+  padding: 8px 20px;
+  text-decoration: none;
+  color: $base-white;
+  background-color: $base-primary;
+  border-radius: 4px;
+
+  @include font-resize(16px, 24px);
+}
