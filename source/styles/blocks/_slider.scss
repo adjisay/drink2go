@@ -21,12 +21,23 @@
   flex: 0 0 100%;
   scroll-snap-align: start;
 
+  @media (min-width: $tablet-width) {
+    background-color: transparent;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: none;
+  }
+
   &--flat-white {
     background-color: $flat-white;
 
     @media (min-width: $tablet-width) {
-      background-color: transparent;
       background-image: linear-gradient(to bottom, $flat-white 640px, transparent 640px, transparent 100%);
+    }
+
+    @media (min-width: $desktop-width) {
+      background-color: $flat-white;
     }
   }
 
@@ -34,8 +45,11 @@
     background-color: $lavender-latte;
 
     @media (min-width: $tablet-width) {
-      background-color: transparent;
       background-image: linear-gradient(to bottom, $lavender-latte 640px, transparent 640px, transparent 100%);
+    }
+
+    @media (min-width: $desktop-width) {
+      background-color: $lavender-latte;
     }
   }
 
@@ -43,8 +57,11 @@
     background-color: $espresso;
 
     @media (min-width: $tablet-width) {
-      background-color: transparent;
       background-image: linear-gradient(to bottom, $espresso 640px, transparent 640px, transparent 100%);
+    }
+
+    @media (min-width: $desktop-width) {
+      background-color: $espresso;
     }
   }
 }
@@ -59,11 +76,23 @@
   @media (min-width: $tablet-width) {
     padding-block: 60px 0;
   }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    column-gap: 30px;
+    justify-content: center;
+    padding-block: 30px 84px;
+    text-align: left;
+  }
 }
 
 .slider picture {
   @media (min-width: $tablet-width) {
     order: 1;
+  }
+
+  @media (min-width: $desktop-width) {
+    order: 0;
   }
 }
 
@@ -85,6 +114,7 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 16px;
+    letter-spacing: 1.12px;
 
     @include font-resize(56px, 80px);
   }
@@ -98,6 +128,10 @@
 
     @include font-resize(20px, 32px);
   }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 40px;
+  }
 }
 
 .slider__order {
@@ -105,6 +139,11 @@
   align-items: center;
   justify-content: space-between;
   width: 230px;
+  margin: 0 auto;
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
 }
 
 .slider__price {
@@ -144,6 +183,10 @@
     @media (min-width: $tablet-width) {
       left: calc((100% - $tablet-width) / 2 + 30px);
     }
+
+    @media (min-width: $desktop-width) {
+      left: calc((100% - $desktop-width) / 2 - 10px);
+    }
   }
 
   &--next {
@@ -153,13 +196,46 @@
     @media (min-width: $tablet-width) {
       right: calc((100% - $tablet-width) / 2 + 30px);
     }
+
+    @media (min-width: $desktop-width) {
+      right: calc((100% - $desktop-width) / 2 - 10px);
+    }
   }
 
   @media (min-width: $tablet-width) {
     top: 310px;
   }
+
+  @media (min-width: $desktop-width) {
+    top: 347px;
+  }
 }
 
 .slider__pagination {
   display: none;
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    content: "";
+    translate: -50% 0;
+
+    @include list-style;
+  }
+}
+
+.slider__button-pagination {
+  width: 62px;
+  height: 4px;
+  background-color: $base-white;
+  border: none;
+  cursor: pointer;
+
+  &--current {
+    background-color: $base-primary;
+  }
 }
