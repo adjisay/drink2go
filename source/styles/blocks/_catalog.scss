@@ -15,6 +15,10 @@
     "pagination";
   justify-items: center;
   padding-block: 50px 44px;
+
+  @media (min-width: $tablet-width) {
+    padding-block: 80px 90px;
+  }
 }
 
 .catalog__badge {
@@ -31,11 +35,19 @@
 .catalog__form {
   grid-area: form;
   margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 44px;
+  }
 }
 
 .catalog__sort {
   grid-area: sort;
   margin-bottom: 16px;
+
+  @media (min-width: $tablet-width) {
+    justify-self: end;
+  }
 }
 
 .catalog__list {
@@ -44,8 +56,18 @@
   row-gap: 20px;
 
   @include list-style(0 0 40px 0, 0);
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 70px;
+  }
 }
 
 .catalog__pagination {
   grid-area: pagination;
+
+  @media (min-width: $tablet-width) {
+    justify-self: end;
+  }
 }

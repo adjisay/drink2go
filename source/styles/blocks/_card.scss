@@ -6,11 +6,19 @@
   padding: 40px 20px 20px;
   background-color: $base-white;
   border-radius: 4px;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 30px 30px;
+  }
 }
 
 .card picture {
   align-self: center;
   margin-bottom: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
 }
 
 .card__image {
@@ -21,10 +29,20 @@
   margin-block: 0 4px;
 
   @include font-resize(18px, 32px);
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 10px;
+
+    @include font-resize(24px, 36px);
+  }
 }
 
 .card__description {
   margin-block: 0 16px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .card__order {
