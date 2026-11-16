@@ -9,6 +9,13 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 40px;
   }
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    width: 318px;
+    height: 714px;
+  }
 }
 
 .form__group {
@@ -69,6 +76,10 @@
 
   @media (min-width: $tablet-width) {
     width: 87px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
   }
 }
 
@@ -178,5 +189,11 @@
     grid-column: 1 / -1;
     column-gap: 20px;
     justify-content: center;
+  }
+}
+
+.form__button {
+  @media (min-width: $desktop-width) {
+    flex-grow: 1;
   }
 }

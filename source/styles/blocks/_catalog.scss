@@ -19,6 +19,17 @@
   @media (min-width: $tablet-width) {
     padding-block: 80px 90px;
   }
+
+  @media (min-width: $desktop-width) {
+    grid-template-areas:
+      "badge badge"
+      "title title"
+      "form  sort"
+      "form  list"
+      ".     pagination";
+    column-gap: 30px;
+    padding-block: 100px 120px;
+  }
 }
 
 .catalog__badge {
@@ -61,6 +72,17 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-bottom: 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 60px;
+  }
+}
+
+.catalog__item:nth-child(2) {
+  @media (min-width: $desktop-width) {
+    box-shadow: 0 5px 15px 0 rgba($base-black, 0.15);
   }
 }
 
