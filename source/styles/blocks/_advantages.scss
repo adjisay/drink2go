@@ -3,6 +3,10 @@
 .advantages__container {
   padding-block: 50px 60px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    padding-block: 60px 100px;
+  }
 }
 
 .advantages__badge {
@@ -12,6 +16,10 @@
 
 .advantages__title {
   margin-block: 0 36px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 60px;
+  }
 }
 
 .advantages__list {
@@ -20,6 +28,12 @@
   row-gap: 32px;
 
   @include list-style;
+
+  @media (min-width: $tablet-width) {
+    flex-flow: row wrap;
+    gap: 50px 30px;
+    padding-inline: 10px;
+  }
 }
 
 .advantages__item {
@@ -33,7 +47,12 @@
     width: 52px;
     height: 56px;
     content: "";
-    transform: translateX(-50%);
+    translate: -50% 0;
+
+    @media (min-width: $tablet-width) {
+      left: 0;
+      translate: 0;
+    }
   }
 
   &--speed::before {
@@ -51,15 +70,34 @@
   &--ecology::before {
     background-image: url("../../icons/stack.svg#advantages-ecology-icon");
   }
+
+  @media (min-width: $tablet-width) {
+    width: 339px;
+    padding-top: 0;
+    padding-left: 72px;
+    text-align: left;
+  }
 }
 
 .advantages__subtitle {
   margin-block: 0 4px;
 
   @include font-resize(18px, 32px);
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 10px;
+
+    @include font-resize(24px, 36px);
+  }
 }
 
 .advantages__description {
   margin-block: 0;
   font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    width: 267px;
+
+    @include font-resize(16px, 24px);
+  }
 }

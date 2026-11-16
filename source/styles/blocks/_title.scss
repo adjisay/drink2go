@@ -4,4 +4,8 @@
   font-weight: 700;
 
   @include font-resize(24px, 36px);
+
+  @media (min-width: $tablet-width) {
+    @include font-resize(42px, 64px);
+  }
 }
