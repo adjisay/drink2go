@@ -1,0 +1,35 @@
+@use "../common/" as *;
+
+.social-list {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  width: 160px;
+
+  @include list-style;
+}
+
+.social-list__item {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.social-list__link {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: $base-grey;
+
+  &--vk {
+    mask-image: url("../../icons/stack.svg#social-vk-icon");
+  }
+
+  &--pinterest {
+    mask-image: url("../../icons/stack.svg#social-pinterest-icon");
+  }
+
+  &--ok {
+    mask-image: url("../../icons/stack.svg#social-ok-icon");
+  }
+}

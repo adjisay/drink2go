@@ -1,5 +1,9 @@
 @use "../common/" as *;
 
+.logo__image {
+  display: block;
+}
+
 .logo__description {
   display: none;
 }
