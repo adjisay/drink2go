@@ -1,0 +1,43 @@
+@use "../common/" as *;
+
+.sort {
+  position: relative;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
+
+  &::after {
+    position: absolute;
+    top: 11px;
+    right: 7px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-color: $base-primary;
+    mask-image: url("../../icons/stack.svg#arrow-small-icon");
+    transform: rotate(-90deg);
+    cursor: pointer;
+  }
+}
+
+.sort__label {
+  font-weight: 600;
+
+  @include font-resize(16px, 24px);
+}
+
+.sort__select {
+  width: 165px;
+  padding: 4px 10px;
+  font-family: $main-font;
+  font-weight: 600;
+  color: $base-primary;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+
+  @include font-resize(16px, 24px);
+}

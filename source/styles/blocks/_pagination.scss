@@ -1,0 +1,41 @@
+@use "../common/" as *;
+
+.pagination__list {
+  display: flex;
+  column-gap: 20px;
+
+  @include list-style;
+}
+
+.pagination__button {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+
+  text-align: center;
+
+  &--current {
+    font-weight: 600;
+    color: $base-black;
+    background-color: transparent;
+  }
+
+  .pagination__item:first-of-type &::before,
+  .pagination__item:last-of-type &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-color: $base-primary;
+    mask-image: url("../../icons/stack.svg#arrow-small-icon");
+    translate: -50% -50%;
+  }
+
+  .pagination__item:last-of-type &::before {
+    rotate: 180deg;
+  }
+}
