@@ -7,6 +7,10 @@
   @media (min-width: $tablet-width) {
     padding-block: 60px 100px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-block: 100px 120px;
+  }
 }
 
 .advantages__badge {
@@ -19,6 +23,10 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 80px;
   }
 }
 
@@ -33,6 +41,11 @@
     flex-flow: row wrap;
     gap: 50px 30px;
     padding-inline: 10px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 30px;
+    padding-inline: 0;
   }
 }
 
@@ -52,6 +65,11 @@
     @media (min-width: $tablet-width) {
       left: 0;
       translate: 0;
+    }
+
+    @media (min-width: $desktop-width) {
+      left: 50%;
+      translate: -50% 0;
     }
   }
 
@@ -77,6 +95,13 @@
     padding-left: 72px;
     text-align: left;
   }
+
+  @media (min-width: $desktop-width) {
+    width: 313px;
+    padding-top: 76px;
+    padding-left: 0;
+    text-align: center;
+  }
 }
 
 .advantages__subtitle {
@@ -97,6 +122,12 @@
 
   @media (min-width: $tablet-width) {
     width: 267px;
+
+    @include font-resize(16px, 24px);
+  }
+
+  @media (min-width: $tablet-width) {
+    width: fit-content;
 
     @include font-resize(16px, 24px);
   }
