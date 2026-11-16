@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @mixin font-face($font-family, $file-path, $font-style: normal, $font-weight: 400) {
   @font-face {
     font-family: $font-family;
@@ -26,4 +28,16 @@
 @mixin font-resize($font-size, $line-height) {
   font-size: $font-size;
   line-height: $line-height;
+}
+
+@mixin section-bottom-line($top) {
+  &::after {
+    position: absolute;
+    top: $top;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: $base-secondary;
+  }
 }
