@@ -12,6 +12,14 @@
   padding-block: 20px;
 
   @include section-bottom-line(80px);
+
+  @media (min-width: $tablet-width) {
+    padding-block: 42px 32px;
+
+    &::after {
+      content: none;
+    }
+  }
 }
 
 .page-footer__title {
@@ -45,6 +53,14 @@
   @include font-resize(12px, 16px);
 }
 
+.page-footer__columns {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
 .page-footer__column {
   padding-block: 20px;
 
@@ -58,6 +74,12 @@
 
   &:nth-child(3) {
     @include section-bottom-line(627px);
+  }
+
+  @media (min-width: $tablet-width) {
+    &:nth-child(n)::after {
+      content: none;
+    }
   }
 }
 
@@ -100,10 +122,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-block: 0;
   padding-block: 20px 30px;
   color: $base-grey;
 
   @include font-resize(12px, 16px);
+
+  @media (min-width: $tablet-width) {
+    padding-block: 30px 40px;
+  }
 }
 
 .page-footer__copyright-link {
