@@ -1,9 +1,26 @@
 @use "../common/" as *;
 
+.logo {
+  text-decoration: none;
+  color: $base-black;
+
+  @include font-resize(12px, 16px);
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    column-gap: 20px;
+  }
+}
+
 .logo__image {
   display: block;
 }
 
 .logo__description {
   display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    width: 126px;
+  }
 }
