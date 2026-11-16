@@ -23,14 +23,29 @@
 
   &--flat-white {
     background-color: $flat-white;
+
+    @media (min-width: $tablet-width) {
+      background-color: transparent;
+      background-image: linear-gradient(to bottom, $flat-white 640px, transparent 640px, transparent 100%);
+    }
   }
 
   &--lavender-latte {
     background-color: $lavender-latte;
+
+    @media (min-width: $tablet-width) {
+      background-color: transparent;
+      background-image: linear-gradient(to bottom, $lavender-latte 640px, transparent 640px, transparent 100%);
+    }
   }
 
   &--espresso {
     background-color: $espresso;
+
+    @media (min-width: $tablet-width) {
+      background-color: transparent;
+      background-image: linear-gradient(to bottom, $espresso 640px, transparent 640px, transparent 100%);
+    }
   }
 }
 
@@ -40,6 +55,16 @@
   align-items: center;
   padding-block: 20px 60px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    padding-block: 60px 0;
+  }
+}
+
+.slider picture {
+  @media (min-width: $tablet-width) {
+    order: 1;
+  }
 }
 
 .slider__image {
@@ -57,10 +82,22 @@
   letter-spacing: 0.72px;
 
   @include font-resize(36px, 48px);
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+
+    @include font-resize(56px, 80px);
+  }
 }
 
 .slider__description {
   margin-block: 0 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 608px;
+
+    @include font-resize(20px, 32px);
+  }
 }
 
 .slider__order {
@@ -76,6 +113,7 @@
 }
 
 .slider__price-old {
+  font-size: 16px;
   color: $base-primary;
 }
 
@@ -85,7 +123,41 @@
 }
 
 .slider__button-action {
-  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: $base-primary;
+  border: none;
+  mask-image: url("../../icons/stack.svg#arrow-large-icon");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 11px 20px;
+  translate: 0 -50%;
+  cursor: pointer;
+
+  &--prev {
+    left: calc((100% - $mobile-width) / 2 - 20px);
+
+    @media (min-width: $tablet-width) {
+      left: calc((100% - $tablet-width) / 2 + 30px);
+    }
+  }
+
+  &--next {
+    right: calc((100% - $mobile-width) / 2 - 20px);
+    rotate: 180deg;
+
+    @media (min-width: $tablet-width) {
+      right: calc((100% - $tablet-width) / 2 + 30px);
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 310px;
+  }
 }
 
 .slider__pagination {
