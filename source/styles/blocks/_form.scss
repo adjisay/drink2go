@@ -10,7 +10,7 @@
     column-gap: 40px;
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     grid-template-columns: 1fr;
     column-gap: 0;
     width: 318px;
@@ -30,6 +30,59 @@
   font-weight: 600;
 
   @include font-resize(16px, 24px);
+}
+
+.form__slider {
+  height: 2px;
+  margin-bottom: 24px;
+  background-color: $light-grey;
+  border: none;
+  border-radius: 1px;
+  box-shadow: none;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.form__slider .noUi-base {
+  width: auto;
+  margin-inline: 12px;
+}
+/* stylelint-disable-next-line selector-class-pattern */
+.form__slider .noUi-connects {
+  overflow: visible;
+}
+/* stylelint-disable-next-line selector-class-pattern */
+.form__slider .noUi-connect {
+  top: -1px;
+  height: 4px;
+  background-color: $primary-lighter;
+}
+/* stylelint-disable-next-line selector-class-pattern */
+.form__slider .noUi-handle {
+  top: -11px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  background-color: $base-white;
+  border: 2px solid $primary-lighter;
+  border-radius: 50%;
+  box-shadow: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+
+  &:hover,
+  /* stylelint-disable-next-line selector-class-pattern */
+  &.noUi-active {
+    border-color: $base-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $base-primary;
+    outline-offset: 2px;
+  }
 }
 
 .form__price-range {
