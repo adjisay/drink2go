@@ -197,7 +197,7 @@
           <h2 class="catalog__title title">Каталог кофейных напитков</h2>
           <form class="catalog__form form" action="https://echo.htmlacademy.ru" method="get">
             <fieldset class="form__group">
-              <legend class="form__group-title">Цена</legend>
+              <legend class="form__group-title form__group-title--large">Цена</legend>
               <div class="form__slider" id="price-slider"></div>
               <div class="form__price-range">
                 <label class="form__price-label">
@@ -281,12 +281,14 @@
           </form>
           <div class="catalog__sort sort">
             <label class="sort__label" for="sort">Сортировка:</label>
-            <select class="sort__select" name="sort" id="sort">
-              <option value="default" selected>по умолчанию</option>
-              <option value="price-asc">по цене вверх</option>
-              <option value="price-desc">по цене вниз</option>
-              <option value="name">по названию</option>
-            </select>
+            <div class="sort__select-wrapper">
+              <select class="sort__select" name="sort" id="sort">
+                <option value="default" selected>по умолчанию</option>
+                <option value="price-asc">по цене вверх</option>
+                <option value="price-desc">по цене вниз</option>
+                <option value="name">по названию</option>
+              </select>
+            </div>
           </div>
           <ul class="catalog__list">
             <li class="catalog__item card">
@@ -365,7 +367,7 @@
           <nav class="catalog__pagination pagination" aria-label="Постраничная навигация">
             <ul class="pagination__list">
               <li class="pagination__item">
-                <a class="pagination__button button button--invert" href="#">
+                <a class="pagination__button button button--invert pagination__button--prev" href="#">
                   <span class="pagination__button-text">Назад</span>
                 </a>
               </li>
@@ -379,7 +381,7 @@
                 <a class="pagination__button button button--invert" href="#">3</a>
               </li>
               <li class="pagination__item">
-                <a class="pagination__button button button--invert" href="#">
+                <a class="pagination__button button button--invert pagination__button--next" href="#">
                   <span class="pagination__button-text">Вперёд</span>
                 </a>
               </li>
