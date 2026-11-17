@@ -1,29 +1,14 @@
 @use "../common/" as *;
 
 .sort {
-  position: relative;
   display: flex;
   column-gap: 8px;
   align-items: center;
   justify-content: space-between;
   width: 280px;
 
-  &::after {
-    position: absolute;
-    top: 11px;
-    right: 7px;
-    width: 10px;
-    height: 10px;
-    content: "";
-    background-color: $base-primary;
-    mask-image: url("../../icons/stack.svg#arrow-small-icon");
-    transform: rotate(-90deg);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-  }
-
-  &:has(.sort__select:open)::after {
-    transform: rotate(90deg);
+  @media (min-width: $tablet-width) {
+    width: 282px;
   }
 }
 
@@ -31,6 +16,29 @@
   font-weight: 600;
 
   @include font-resize(16px, 24px);
+  @include text-overflow(110px);
+}
+
+.sort__select-wrapper {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-color: $base-primary;
+    mask-image: url("../../icons/stack.svg#arrow-small-icon");
+    rotate: -90deg;
+    transition: rotate 0.2s ease;
+    cursor: pointer;
+  }
+
+  &:has(.sort__select:open)::after {
+    rotate: 90deg;
+  }
 }
 
 .sort__select {

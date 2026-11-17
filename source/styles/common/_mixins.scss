@@ -41,3 +41,8 @@
     background-color: $base-secondary;
   }
 }
+
+@mixin text-overflow($max-width, $overflow-wrap: break-word) {
+  max-width: $max-width;
+  overflow-wrap: $overflow-wrap;
+}

@@ -13,6 +13,7 @@
   cursor: pointer;
 
   @include font-resize(16px, 24px);
+  @include text-overflow(149px);
 
   &:hover,
   &:focus-visible {

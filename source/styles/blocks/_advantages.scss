@@ -5,7 +5,7 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
-    padding-block: 60px 100px;
+    padding-bottom: 100px;
   }
 
   @media (min-width: $desktop-width) {
@@ -44,7 +44,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    gap: 30px;
+    gap: 36px;
     padding-inline: 0;
   }
 }
@@ -108,6 +108,7 @@
   margin-block: 0 4px;
 
   @include font-resize(18px, 32px);
+  @include text-overflow(100%);
 
   @media (min-width: $tablet-width) {
     margin-bottom: 10px;

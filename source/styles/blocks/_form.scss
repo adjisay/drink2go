@@ -7,14 +7,16 @@
 
   @media (min-width: $tablet-width) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 40px;
+    gap: 40px 30px;
   }
 
   @media (min-width: $desktop-width) {
     grid-template-columns: 1fr;
-    column-gap: 0;
+    gap: 30px 0;
+    align-items: start;
+    align-self: start;
     width: 318px;
-    height: 714px;
+    padding-top: 4px;
   }
 }
 
@@ -30,11 +32,20 @@
   font-weight: 600;
 
   @include font-resize(16px, 24px);
+  @include text-overflow(100%, anywhere);
+
+  &--large {
+    margin-bottom: 30px;
+
+    @media (min-width: $desktop-width) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .form__slider {
   height: 2px;
-  margin-bottom: 24px;
+  margin-bottom: 33px;
   background-color: $light-grey;
   border: none;
   border-radius: 1px;
@@ -115,6 +126,14 @@
     background-color: $base-grey;
     transform: translate(-50%, -50%);
   }
+
+  @media (min-width: $tablet-width) {
+    width: 222px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
 }
 
 .form__price-value {
@@ -152,6 +171,7 @@
 
   @media (min-width: $tablet-width) {
     width: 87px;
+    padding-block: 6px;
   }
 
   @media (min-width: $desktop-width) {
@@ -280,6 +300,7 @@
 
 .form__lead {
   @include font-resize(16px, 24px);
+  @include text-overflow(100%, anywhere);
 }
 
 .form__buttons-wrapper {
@@ -293,10 +314,16 @@
     column-gap: 20px;
     justify-content: center;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 10px;
+  }
 }
 
 .form__button {
+  max-width: 280px;
+
   @media (min-width: $desktop-width) {
-    flex-grow: 1;
+    flex: 1 0 149px;
   }
 }
