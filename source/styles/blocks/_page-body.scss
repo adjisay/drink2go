@@ -1,0 +1,6 @@
+@use "../common/" as *;
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+}
