@@ -47,6 +47,13 @@
   .pagination__item:last-of-type & {
     width: fit-content;
     padding-inline: 20px;
+
+    &:hover::before,
+    &:focus-visible::before,
+    &:active::before,
+    &:disabled::before {
+      background-color: $base-white;
+    }
   }
 }
 

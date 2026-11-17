@@ -177,6 +177,14 @@
   translate: 0 -50%;
   cursor: pointer;
 
+  &:active {
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+  }
+
   &--prev {
     left: calc((100% - $mobile-width) / 2 - 20px);
 
@@ -233,9 +241,16 @@
   height: 4px;
   background-color: $base-white;
   border: none;
+  transition: background-color 0.2s ease;
   cursor: pointer;
 
-  &--current {
+  &--current,
+  &:active {
     background-color: $base-primary;
+  }
+
+  &:hover:not(.slider__button-pagination--current),
+  &:focus-visible:not(.slider__button-pagination--current) {
+    background-color: rgba($base-primary, 0.25);
   }
 }

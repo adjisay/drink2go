@@ -79,8 +79,18 @@
   text-decoration: none;
   text-transform: uppercase;
   color: $base-black;
+  transition: color 0.2s ease;
 
   @include font-resize(12px, 16px);
+
+  &:hover,
+  &:focus-visible {
+    color: $primary-lighter;
+  }
+
+  &:active {
+    color: $primary-darker;
+  }
 }
 
 .page-footer__columns {
@@ -181,4 +191,14 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $base-primary;
+  }
+
+  &:active {
+    color: $primary-darker;
+  }
 }

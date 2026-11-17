@@ -18,11 +18,7 @@
   flex-wrap: wrap;
   width: 120px;
 
-  @include list-style(0 22px 0 auto);
-
-  @media (min-width: $tablet-width) {
-    margin-right: 0;
-  }
+  @include list-style(0 0 0 auto);
 
   @media (min-width: $desktop-width) {
     width: auto;
@@ -36,6 +32,16 @@
   height: 60px;
   text-decoration: none;
   color: inherit;
+  transition: all 0.2 ease;
+
+  &:hover::before,
+  &:focus-visible::before {
+    background-color: $base-primary;
+  }
+
+  &:active {
+    background-color: $base-secondary;
+  }
 
   &::before {
     position: absolute;
@@ -68,6 +74,11 @@
   @media (min-width: $desktop-width) {
     width: fit-content;
     padding: 32px 20px 32px 44px;
+
+    &:hover,
+    &:focus-visible {
+      color: $base-primary;
+    }
   }
 }
 
@@ -85,11 +96,20 @@
 }
 
 .navigation__toggle {
-  width: 16px;
-  height: 12px;
+  width: 60px;
+  height: 60px;
+  margin-right: -20px;
+  padding: 0;
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 12px;
   border: none;
   cursor: pointer;
+
+  &:active {
+    background-color: $base-secondary;
+  }
 
   .navigation--close & {
     background-image: url("../../icons/stack.svg#navigation-burger-icon");
@@ -168,6 +188,11 @@
   text-decoration: none;
   color: inherit;
   background-color: $base-white;
+  transition: all 0.2 ease;
+
+  &:active {
+    background-color: $base-secondary;
+  }
 
   @media (min-width: $tablet-width) {
     padding: 32px 20px;
@@ -185,6 +210,11 @@
         content: "";
         background-color: $base-primary;
       }
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $base-primary;
     }
   }
 }

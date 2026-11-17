@@ -20,6 +20,12 @@
   width: 20px;
   height: 20px;
   background-color: $base-grey;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $base-primary;
+  }
 
   &--vk {
     mask-image: url("../../icons/stack.svg#social-vk-icon");

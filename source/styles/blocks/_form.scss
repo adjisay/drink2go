@@ -41,22 +41,22 @@
   box-shadow: none;
 }
 
-/* stylelint-disable-next-line selector-class-pattern */
+/* stylelint-disable selector-class-pattern */
 .form__slider .noUi-base {
   width: auto;
   margin-inline: 12px;
 }
-/* stylelint-disable-next-line selector-class-pattern */
+
 .form__slider .noUi-connects {
   overflow: visible;
 }
-/* stylelint-disable-next-line selector-class-pattern */
+
 .form__slider .noUi-connect {
   top: -1px;
   height: 4px;
   background-color: $primary-lighter;
 }
-/* stylelint-disable-next-line selector-class-pattern */
+
 .form__slider .noUi-handle {
   top: -11px;
   right: -12px;
@@ -66,6 +66,7 @@
   border: 2px solid $primary-lighter;
   border-radius: 50%;
   box-shadow: none;
+  transition: all 0.2s ease;
   cursor: pointer;
 
   &::before,
@@ -74,16 +75,29 @@
   }
 
   &:hover,
-  /* stylelint-disable-next-line selector-class-pattern */
-  &.noUi-active {
-    border-color: $base-primary;
+  &:focus-visible {
+    background-color: $primary-lighter;
+    outline: none;
+    box-shadow: inset 0 0 0 2px $base-white;
   }
 
-  &:focus-visible {
-    outline: 2px solid $base-primary;
-    outline-offset: 2px;
+  &.noUi-active {
+    background-color: $base-primary;
+    box-shadow: inset 0 0 0 2px $base-white;
   }
 }
+
+.form__slider[disabled] .noUi-connect {
+  background-color: $base-grey;
+}
+
+.form__slider[disabled] .noUi-handle {
+  background-color: $base-white;
+  border-color: $base-grey;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+/* stylelint-enable selector-class-pattern */
 
 .form__price-range {
   position: relative;
@@ -127,6 +141,15 @@
     opacity: 1;
   }
 
+  &:focus-visible {
+    outline-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $lightest-grey;
+    border-color: $light-grey;
+  }
+
   @media (min-width: $tablet-width) {
     width: 87px;
   }
@@ -162,6 +185,7 @@
   padding: 0;
   border: 2px solid $base-grey;
   appearance: none;
+  transition: all 0.2s ease;
   cursor: pointer;
 
   &:disabled + .form__lead {
@@ -176,35 +200,51 @@
       border-color: $base-primary;
     }
 
-    &:checked::before {
+    &::before {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 16px;
       height: 16px;
       content: "";
-      background-color: $base-primary;
+      background-color: $base-white;
       border-radius: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    &:checked::before {
+      background-color: $base-primary;
+    }
+
+    &:not(:disabled, :checked):hover::before {
+      background-color: rgba($base-primary, 0.25);
+    }
+
+    &:not(:disabled, :checked):hover {
+      border-color: $primary-lighter;
     }
 
     &:disabled {
       border-color: $light-grey;
       cursor: not-allowed;
     }
+
+    &:disabled:checked::before {
+      background-color: $light-grey;
+    }
   }
 
   &--checkbox {
     width: 42px;
     background-color: $base-grey;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 12px;
     transition: background-color 0.2s;
 
     &::before {
       position: absolute;
-      top: 2px;
-      left: 2px;
+      top: 0;
+      left: 0;
       width: 20px;
       height: 20px;
       content: "";
@@ -221,9 +261,19 @@
       transform: translateX(18px);
     }
 
+    &:not(:disabled, :checked):hover,
+    &:not(:checked):focus-visible {
+      background-color: rgba($primary-darker, 0.25);
+      border-color: $primary-lighter;
+    }
+
     &:disabled {
       background-color: $light-grey;
       cursor: not-allowed;
+    }
+
+    &:disabled:checked::before {
+      background-color: $base-grey;
     }
   }
 }

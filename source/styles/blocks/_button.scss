@@ -9,13 +9,45 @@
   background-color: $base-primary;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.2s ease;
   cursor: pointer;
 
   @include font-resize(16px, 24px);
 
+  &:hover,
+  &:focus-visible {
+    background-color: $primary-lighter;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+    cursor: not-allowed;
+  }
+
   &--invert {
     color: $base-primary;
     background-color: $base-white;
+
+    &:hover,
+    &:focus-visible {
+      color: $base-white;
+      background-color: $primary-lighter;
+    }
+
+    &:active {
+      color: $base-white;
+      background-color: $primary-darker;
+    }
+
+    &:disabled {
+      color: $base-white;
+      background-color: $light-grey;
+      cursor: not-allowed;
+    }
   }
 
   &--small-font {

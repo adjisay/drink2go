@@ -18,7 +18,12 @@
     background-color: $base-primary;
     mask-image: url("../../icons/stack.svg#arrow-small-icon");
     transform: rotate(-90deg);
+    transition: transform 0.2s ease;
     cursor: pointer;
+  }
+
+  &:has(.sort__select:open)::after {
+    transform: rotate(90deg);
   }
 }
 
@@ -36,8 +41,15 @@
   color: $base-primary;
   background-color: transparent;
   border: none;
+  border-radius: 4px;
   appearance: none;
+  transition: all 0.2s ease;
   cursor: pointer;
 
   @include font-resize(16px, 24px);
+
+  &:hover,
+  &:focus-visible {
+    background-color: $base-secondary;
+  }
 }
