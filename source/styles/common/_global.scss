@@ -20,6 +20,7 @@ body {
 }
 
 body {
+  min-width: $mobile-width;
   font-family: $main-font;
   font-size: 14px;
   line-height: 20px;

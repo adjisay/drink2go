@@ -1,5 +1,7 @@
 @use "../common/" as *;
 
+$slider-horizon: 198px;
+
 .slider {
   position: relative;
 }
@@ -19,50 +21,29 @@
 
 .slider__item {
   flex: 0 0 100%;
+  background-color: var(--slider-color);
   scroll-snap-align: start;
 
   @media (min-width: $tablet-width) {
     background-color: transparent;
+    background-image: linear-gradient(to top, transparent $slider-horizon, var(--slider-color) $slider-horizon);
   }
 
   @media (min-width: $desktop-width) {
+    background-color: var(--slider-color);
     background-image: none;
   }
 
   &--flat-white {
-    background-color: $flat-white;
-
-    @media (min-width: $tablet-width) {
-      background-image: linear-gradient(to bottom, $flat-white 640px, transparent 640px, transparent 100%);
-    }
-
-    @media (min-width: $desktop-width) {
-      background-color: $flat-white;
-    }
+    --slider-color: #{$flat-white};
   }
 
   &--lavender-latte {
-    background-color: $lavender-latte;
-
-    @media (min-width: $tablet-width) {
-      background-image: linear-gradient(to bottom, $lavender-latte 640px, transparent 640px, transparent 100%);
-    }
-
-    @media (min-width: $desktop-width) {
-      background-color: $lavender-latte;
-    }
+    --slider-color: #{$lavender-latte};
   }
 
   &--espresso {
-    background-color: $espresso;
-
-    @media (min-width: $tablet-width) {
-      background-image: linear-gradient(to bottom, $espresso 640px, transparent 640px, transparent 100%);
-    }
-
-    @media (min-width: $desktop-width) {
-      background-color: $espresso;
-    }
+    --slider-color: #{$espresso};
   }
 }
 
@@ -185,12 +166,18 @@
   translate: 0 -50%;
   cursor: pointer;
 
+  &:hover,
+  &:focus-visible {
+    background-color: $primary-lighter;
+  }
+
   &:active {
     background-color: $primary-darker;
   }
 
   &:disabled {
     background-color: $base-grey;
+    cursor: not-allowed;
   }
 
   &--prev {
@@ -219,11 +206,11 @@
   }
 
   @media (min-width: $tablet-width) {
-    top: 320px;
+    top: calc((100% - $slider-horizon) / 2);
   }
 
   @media (min-width: $desktop-width) {
-    top: 347px;
+    top: 50%;
   }
 }
 

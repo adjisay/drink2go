@@ -23,11 +23,5 @@
   @media (min-width: $desktop-width) {
     display: block;
     width: 126px;
-
-    .page-footer__logo & {
-      width: fit-content;
-
-      @include font-resize(14px, 20px);
-    }
   }
 }

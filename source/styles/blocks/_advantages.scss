@@ -122,12 +122,6 @@
   font-weight: 400;
 
   @media (min-width: $tablet-width) {
-    width: 267px;
-
-    @include font-resize(16px, 24px);
-  }
-
-  @media (min-width: $tablet-width) {
     width: fit-content;
 
     @include font-resize(16px, 24px);

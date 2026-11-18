@@ -23,7 +23,7 @@
   justify-content: space-between;
   padding-block: 20px;
 
-  @include section-bottom-line(80px);
+  @include section-bottom-line;
 
   @media (min-width: $tablet-width) {
     padding-block: 40px 10px;
@@ -48,6 +48,12 @@
     flex-direction: column;
     row-gap: 10px;
     align-items: start;
+
+    & .logo__description {
+      width: fit-content;
+
+      @include font-resize(14px, 20px);
+    }
   }
 }
 
@@ -58,7 +64,7 @@
   color: $base-primary;
 
   &--contacts {
-    margin-block: 1 21px;
+    margin-block: 1px 21px;
 
     @media (min-width: $tablet-width) {
       margin-block: 0 20px;
@@ -112,21 +118,10 @@
 
 .page-footer__column {
   padding-block: 20px;
-
-  &:nth-child(1) {
-    @include section-bottom-line(293px);
-  }
-
-  &:nth-child(2) {
-    @include section-bottom-line(470px);
-  }
-
-  &:nth-child(3) {
-    @include section-bottom-line(627px);
-  }
+  @include section-bottom-line;
 
   @media (min-width: $tablet-width) {
-    &:nth-child(n)::after {
+    &::after {
       content: none;
     }
   }
@@ -188,7 +183,7 @@
 
   @media (min-width: $desktop-width) {
     grid-area: copyright;
-    padding-top: 0;
+    padding-block: 0;
   }
 }
 
