@@ -1,8 +1,9 @@
 const PriceRange = {
   MIN: 0,
-  MAX: 900,
+  MAX: 1000,
 };
 
+const PRICE_START_MAX = 900;
 const SLIDER_STEP = 1;
 
 const initPriceSlider = () => {
@@ -21,7 +22,7 @@ const initPriceSlider = () => {
       min: PriceRange.MIN,
       max: PriceRange.MAX,
     },
-    start: [PriceRange.MIN, PriceRange.MAX],
+    start: [PriceRange.MIN, PRICE_START_MAX],
     step: SLIDER_STEP,
     connect: true,
     format: {
@@ -33,7 +34,7 @@ const initPriceSlider = () => {
   const onSliderUpdate = (values) => {
     const [minValue, maxValue] = values;
 
-    minInputElement.value = minValue;
+    minInputElement.value = minValue === PriceRange.MIN ? '' : minValue;
     maxInputElement.value = maxValue;
   };
 
