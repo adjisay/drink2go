@@ -14,6 +14,17 @@
   width: 40px;
   height: 40px;
   padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover,
+  &:has(:focus-visible) {
+    background-color: $base-secondary;
+  }
+
+  &:active {
+    background-color: rgba($base-primary, 0.25);
+  }
 }
 
 .social-list__link {
@@ -23,8 +34,9 @@
   background-color: $base-grey;
   transition: background-color 0.2s ease;
 
-  &:hover,
-  &:focus-visible {
+  .social-list__item:hover &,
+  .social-list__item:has(:focus-visible) &,
+  .social-list__item:active & {
     background-color: $base-primary;
   }
 

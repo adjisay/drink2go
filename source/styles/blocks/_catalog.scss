@@ -85,7 +85,8 @@
   }
 }
 
-.catalog__item:nth-child(2) {
+.catalog__item:hover,
+.catalog__item:has(:focus-visible) {
   @media (min-width: $desktop-width) {
     box-shadow: 0 5px 15px 0 rgba($base-black, 0.15);
   }
