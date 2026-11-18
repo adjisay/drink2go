@@ -118,6 +118,7 @@
 
 .page-footer__column {
   padding-block: 20px;
+
   @include section-bottom-line;
 
   @media (min-width: $tablet-width) {
